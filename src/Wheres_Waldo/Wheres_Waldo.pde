@@ -1,7 +1,7 @@
 void setup() {
   PImage waldo = loadImage("rbrkg9a.jpg"); // Change this to match your file name.
-  size(500, 500);
-  image(waldo,500,500);
+  size(1000, 1000);
+  image(waldo,0, 0);
   doh = minim.loadSample("homer.wav"); //drag and drop from project onto sketch
   woohoo = minim.loadSample("wohoo.wav"); //drag and drop from project onto sketch } 
 }
@@ -9,15 +9,25 @@ void setup() {
 void draw() {
       // Use this print statement to find out the coordinates of Waldo
       // println("X: " + mouseX + " Y: " + mouseY); 
-
+println("X: "+ mouseX + "Y: " + mouseY);
       // If the mouse is on Waldo, print “Waldo found!”
-
+ if(mouseX >=320&& mouseY >=620&&mouseX<=326&&mouseY<=628){
+   print("Waldo Found!");
+  playWoohoo();
+ 
+ }
+ else{
+ if(mousePressed){
+   playDoh();
+ }
+ }
+ 
       // If Waldo is found, also use the method below to play “Woohoo”
       // Change the name of the sound file if you need to 
       // If the mouse is pressed and they’re not on Waldo, play “Doh”
       // Change the name of the sound file if you need to 
-}
 
+}
 void playWoohoo() {
      woohoo.stop();
      woohoo.trigger();
