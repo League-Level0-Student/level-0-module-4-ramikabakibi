@@ -7,7 +7,15 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class PiAloud {
-
+public static void main(String[] args) {
+	String pi="3.1415926535";
+		for(int i=0;i<13;i++) {
+			pi.charAt(0);
+			System.out.println(pi.charAt(i));
+			speak(pi.charAt(i));
+		}
+	
+}
 	// 1. Make a main method and make sure your program can run
 
 	// 2. Make a String variable to hold the value of Pi. You could use http://www.piday.org/million/ for the value.
